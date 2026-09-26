@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Icon Frameworks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/animations.css" integrity="sha512-7akQLEq1iRlFlXk6KEBZyZGpVkd0FjaRTJZOggDjj6w8BjWU6xkEVrnBS9DTY8Cj6d6ESvRmUSS2P9DjNu7CpA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-circle bg1"></div>
+    <div class="bg-circle bg2"></div>
+    <div class="bg-circle bg3"></div>
+
+    <div class="auth-wallpaper">
+        <div class="auth-card" id="authcard">
+            
+            <!-- 1. LOGIN PANEL -->
+            <div class="form-panel login-panel">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000" viewBox="0 0 24 24">
+                        <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9zm-3 4h12v9H6z"></path>
+                    </svg>
+                </div>
+                <h1>welcome</h1>
+                <p class="subtitel">Login to contact</p>
+                
+                <form onsubmit="event.preventDefault();">
+                    <!-- Email Input -->
+                    <div class="input-group">
+                        <div class="electric-glow"></div>
+                        <div class="electric-border"></div>
+                        <input type="email" id="logionemail" placeholder=" " autocomplete="email" required>
+                        <label for="logionemail">email</label>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="input-group">
+                        <div class="electric-glow"></div>
+                        <div class="electric-border"></div>
+                        <input type="password" id="logionpassword" placeholder=" " autocomplete="current-password" required>
+                        <label for="logionpassword">password</label>
+                        <button type="button" class="password-toggle" onclick="togglePassword('logionpassword', this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+                                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path>
+                                <path d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#">forget password?</a>
+                    </div>
+                    
+                    <button type="submit" class="main-btn">login</button>
+                </form>
+
+                <div class="switch-area">
+                    <span>Don't have an account?</span>
+                    <button type="button" class="switch-circle" onclick="flipcard()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#006cff" viewBox="0 0 24 24">
+                            <path d="M21 7.99h-5V3c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v4.99H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h5V21c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-5.01h5c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1m-1 6h-5c-.55 0-1 .45-1 1V20h-4v-5.01c0-.55-.45-1-1-1H4v-4h5c.55 0 1-.45 1-1V4h4v4.99c0 .55.45 1 1 1h5z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="social">
+                    <button type="button">G</button>
+                    <button type="button">F</button>
+                    <button type="button">in</button>
+                </div>
+            </div>
+
+            <!-- 2. SIGNUP PANEL (Moved outside the login panel) -->
+            <div class="form-panel signup-panel">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+                        <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5m0-8c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3M4 22h16c.55 0 1-.45 1-1v-1c0-3.86-3.14-7-7-7h-4c-3.86 0-7 3.14-7 7v1c0 .55.45 1 1 1m6-7h4c2.76 0 5 2.24 5 5H5c0-2.76 2.24-5 5-5"></path>
+                    </svg>
+                </div>
+                <h1>create account</h1>
+                <p class="subtitel">start your journey</p>
+
+               <form  onsubmit="event.preventDefault();">
+                        <!-- name -->
+                        <div class="input-group">
+                            <div class="electric-glow"></div>
+                            <div class="electric-border"></div>
+                            <input type="text" id="signupname" placeholder="" autocomplete="name" required>
+                            <label for="signupname">full name</label>
+                        </div>
+                        <!-- email -->
+                        <div class="input-group">
+                            <div class="electric-glow"></div>
+                            <div class="electric-border"></div>
+                            <input type="email" id="loginemail" placeholder="" autocomplete="email" required>
+                            <label for="signupemail">email address</label>
+                        </div>
+                        <!-- password -->
+                        <div class="input-group">
+                            <div class="electric-glow"></div>
+                            <div class="electric-border"></div>
+                            <input type="password" id="signuppassword" placeholder="" autocomplete="new-password"
+                                required>
+                            <label for="signuppassword">password</label>
+                            <button type="button" class="password-toggle" onclick="flipcard()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
+                                    viewBox="0 0 24 24">
+                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path>
+                                    <path
+                                        d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5">
+                                    </path>
+                                </svg>
+                            </button>
+
+                        </div>
+                        <!-- confurm -->
+                        <div class="input-group">
+                            <div class="electric-glow"></div>
+                            <div class="electric-border"></div>
+                            <input type="password" id="confirmpassword" placeholder="" autocomplete="new-password"
+                                required>
+                            <label for="signuppassword">confirm password</label>
+                        </div>
+                        <button type="submit" class="main-btn">create account</button>
+                    </form>
+
+
+                    <div class="switch-area">
+                        <span>
+                            Already have account?
+                        </span>
+                        <button class="switch-circle" onclick="flipcard()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
+                                viewBox="0 0 24 24">
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path d="m6 12 6 5v-4h6v-2h-6V7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Operations Layer -->
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
